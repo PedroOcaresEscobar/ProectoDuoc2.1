@@ -1,0 +1,989 @@
+
+
+@media only screen and (max-width: 360px){
+    header{
+        display: none;
+    }
+    body{
+        background-image: url('../img/mensajeDeResolucion.png');
+    }
+    .mensajeDeResolucion{
+        display: flex;
+        font-size: 50px;
+        color: black;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 490px) {
+    /* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+    background-color: #fefefe;
+    margin-left: auto;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    justify-content: start;
+
+    ul{
+        margin-left: -60px;
+
+        display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+        li{
+
+            font-size: x-large;
+            text-align: start;
+            margin: 40px;
+        }
+    }
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        display: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+       display: none;
+      }
+      
+      .imgncuerdaR {
+        display: none;
+      }
+      
+      .navbar-nav {
+        display: flex;
+
+        margin-left: 15%;
+        list-style-type: none;
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: x-small;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -43vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+}
+@media only screen and (min-width: 491px) and (max-width: 664px) {
+    /* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+    background-color: #fefefe;
+    margin-left: auto;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    justify-content: start;
+
+    ul{
+        margin-left: -60px;
+
+        display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+        li{
+
+            font-size: x-large;
+            text-align: start;
+            margin: 40px;
+        }
+    }
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        display: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+       display: none;
+      }
+      
+      .imgncuerdaR {
+        display: none;
+      }
+      
+      .navbar-nav {
+        display: flex;
+
+        margin-left: 15%;
+        list-style-type: none;
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: x-small;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -43vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+}
+
+@media only screen and (min-width: 665px) and (max-width: 839px) {
+    /* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+    background-color: #fefefe;
+    margin-left: auto;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    justify-content: start;
+
+    ul{
+        margin-left: -60px;
+
+        display: block; /* Añade esta línea para asegurar que el contenido del modal sea visible */
+        li{
+
+            font-size: x-large;
+            text-align: start;
+            margin: 40px;
+        }
+    }
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        display: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+       display: none;
+      }
+      
+      .imgncuerdaR {
+        display: none;
+      }
+      
+      .navbar-nav {
+        display: flex;
+
+        margin-left: 15%;
+        list-style-type: none;
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: x-small;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -43vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 70px; /* Ancho del círculo */
+        height: 70px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+}
+
+@media only screen and (min-width: 840px) and (max-width: 972px) {
+    #myModal{
+        display: none;
+    }
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: large;
+        white-space: nowrap;
+        color: #e9c89c;
+        text-decoration: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+        height: 50px;
+        margin-right: auto;
+      }
+      
+      .imgncuerdaR {
+        height: 50px;
+        margin-left: -20%;
+      }
+      
+      .navbar-nav {
+        display: flex;
+        justify-content: end;
+        margin-right: 20%;
+        list-style-type: none;
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: small;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -42vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+}
+@media only screen and (min-width: 973px) and (max-width: 1200px) {
+
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: large;
+        white-space: nowrap;
+        color: #e9c89c;
+        text-decoration: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+        height: 50px;
+        margin-right: auto;
+      }
+      
+      .imgncuerdaR {
+        height: 50px;
+        margin-left: -20%;
+      }
+      
+      .navbar-nav {
+        display: flex;
+        justify-content: end;
+        margin-right: 20%;
+        list-style-type: none;
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: medium;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+        
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -42vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+      }
+      body header .modal{
+        display: none;
+    }
+}
+
+
+
+@media only screen and (min-width: 1201px) {
+    .content-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+      
+        overflow: visible; /* Permite que el contenido sobresalga del navbar */
+        justify-content: center;
+        background-image: url("../img/madera_sola.png");
+      }
+      
+      .titulonavbar {
+        margin: 10px;
+      }
+      
+      .content-navbar-arriba {
+        display: flex;
+        background-color: rgba(107, 72, 27, 0.671);
+      }
+      .numeronavarriba {
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: large;
+        white-space: nowrap;
+        color: #e9c89c;
+        text-decoration: none;
+      }
+      
+      .content-navbar-arriba-img {
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      .content-navbar-arriba-img-l {
+      }
+      
+      .content-navbar-arriba-img-r {
+        margin-left: auto;
+
+      }
+      
+      .content-navbar-abajo-x {
+        display: flex;
+        margin: 25px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .imgncuerdaL {
+        height: 50px;
+        margin-right: auto;
+      }
+      
+      .imgncuerdaR {
+        height: 50px;
+        margin-left: -20%;
+
+      }
+      
+      .navbar-nav {
+        display: flex;
+        justify-content: end;
+        margin-right: 25%;
+        list-style-type: none;
+        
+      }
+      
+      .navbar-nav a {
+        text-decoration: none;
+        color: rgba(107, 72, 27, 0.8);
+        margin: 10px;
+        
+      }
+      
+      .navbar-nav a:visited {
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .navbar-nav li {
+
+        font-family: "Kanit", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: large;
+        white-space: nowrap;
+        color: rgba(107, 72, 27, 0.8);
+      }
+      
+      .imgnavbar {
+        width: 35px;
+      }
+      
+      /* Estilos del círculo */
+      .half-circle {
+        position: absolute;
+        bottom: -35%; /* Controla cuánto sobresale el círculo por debajo del navbar */
+        left: 50%; /* Coloca el centro del círculo en la mitad del navbar */
+        transform: translateX(
+          -41vw
+        ); /* Ajusta la posición horizontal para centrar el círculo */
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+        
+      }
+      
+      .half-circle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(107, 72, 27, 0.671);
+        z-index: -1; /* Asegura que el fondo esté detrás del círculo */
+        background-image: url('../img/madera_sola.png');
+        box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.9);
+  
+      }
+      
+      /* Estilos del círculo alternativo */
+      
+      .half-circle a img {
+        position: absolute;
+        width: 100px; /* Ancho del círculo */
+        height: 100px; /* Altura del círculo */
+        border-radius: 50%; /* Hace que el círculo sea redondeado */
+        z-index: 1; /* Asegura que el círculo esté por encima del contenido del navbar */
+        
+      }
+      body header .modal{
+        display: none;
+    }
+}

@@ -1,0 +1,79 @@
+@media only screen and (min-width: 840px){
+    .menu-btn{
+        display: none;
+    }
+    .menu-close-btn{
+        display: none;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 839px) {
+        .menu-btn {
+            background-color: rgba(107, 72, 27, 0.671);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: auto;
+            border-radius: 5px;
+          }
+          
+          .menu-items {
+            display: none;
+            background-color: #fff;
+            padding: 10px;
+            background-color: rgba(107, 72, 27, 0.671);
+          }
+          
+          .menu-items li {
+            list-style: none;
+          }
+          
+          .menu-items li a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 5px 0;
+          }
+          
+          .menu-items li a:hover {
+            background-color: #f4f4f4;
+          }
+          
+          .menu-close-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+          }
+    
+    
+      .menu-items li {
+        list-style: none;
+      }
+      
+      .menu-items li a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 5px 0;
+      }
+      
+      .menu-items li a:hover {
+        background-color: #c22828;
+      }
+      
+      .menu-close-btn {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        padding: 5px 10px; /* Ajusta el relleno según sea necesario */
+        cursor: pointer;
+        background-color: rgba(107, 72, 27, 0.671);
+        color: #fff; /* Color del texto del botón */
+        border: none;
+        border-radius: 0 0 0 5px; /* Borde redondeado solo en la esquina superior izquierda */
+        z-index: 2; /* Asegura que el botón esté por encima del contenido del modal */
+    }
+}

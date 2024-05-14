@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header> 
+        <nav class="content-navbar">
+            <!-- Tu contenido actual del navbar aquí -->
+            <div class="content-navbar-arriba">
+                <div class="content-navbar-arriba-img">
+                    <div class="content-navbar-arriba-img-l">
+                        <a class="titulonavbar" href=""><img class="imgnavbar" src="/img/instagram.png" alt=""></a>
+                        <a class="titulonavbar" href=""><img class="imgnavbar" src="/img/instagram.png" alt=""></a>
+                    </div>
+                    <div class="content-navbar-arriba-img-r">
+                        <a class="titulonavbar" href=""><img class="imgnavbar" src="/img/instagram.png" alt=""></a>
+                        <a class="titulonavbar" href=""><img class="imgnavbar" src="/img/instagram.png" alt=""></a>
+                        <a class="titulonavbar" href=""><img class="imgnavbar" src="/img/instagram.png" alt=""></a>
+                        <a class="numeronavarriba"  href="">+569 4200 8585</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="content-navbar-abajo">
+                <div class="content-navbar-abajo-c"></div>
+                <div class="content-navbar-abajo-x">
+                    <img class="imgncuerdaL" src="img/cordonsito.gif" alt="">
+                    <button id="menu-toggle" class="menu-btn">Menú</button>
+                    <ul class="navbar-nav menu-items">
+                        <li><a  href="index.html">Inicio</a></li>
+                        <li><a  href="page/nuestrosServicios.html">Nuestros Servicios</a></li>
+                        <li><a  href="page/consultaDelClima.html">Consultar Clima</a></li>
+                        <li><a  href="page/quienes.html">¿Quienes Somos?</a></li>
+                        <li><a  href="page/contactanos.html">Contactanos</a></li>
+                        <li><button id="menu-close-btn" class="menu-close-btn">Cerrar</button></li>
+                    </ul>
+                    <img class="imgncuerdaR" src="img/cordonsito.gif" alt="">
+                </div>
+            </div>
+
+            <!-- Código para el círculo -->
+            <div class="half-circle">
+                <a href=""><img src="/img/logo_v3.png" alt=""></a>
+            </div>
+
+            <!-- Estructura del modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    
+                    <ul id="modalles" class="navbar-nav menu-items-modal">
+                        <li><a  href="index.html">Inicio</a></li>
+                        <li><a  href="page/nuestrosServicios.html">Nuestros Servicios</a></li>
+                        <li><a  href="page/consultaDelClima.html">Consultar Clima</a></li>
+                        <li><a  href="page/quienes.html">¿Quienes Somos?</a></li>
+                        <li><a  href="page/contactanos.html">Contactanos</a></li>
+                        <li><button class="menu-close-btn">Cerrar</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtener el botón que abre el modal
+        var btn = document.getElementById("menu-toggle");
+        var btnC = document.getElementById("modalles");
+
+        // Obtener el span que cierra el modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Obtener el botón de cerrar dentro del modal
+        var btnCloseModal = document.querySelector(".modal-content .menu-close-btn");
+
+        // Cuando se hace clic en el botón, se muestra el modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Cuando se hace clic en el botón de cerrar dentro del modal, se cierra el modal
+        btnCloseModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando se hace clic en el span (x), se cierra el modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando se hace clic fuera del modal, se cierra
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+<p  class="mensajeDeResolucion">saca tu wea de telefono de mi pagina que ocupa trafico</p>
+</html>
