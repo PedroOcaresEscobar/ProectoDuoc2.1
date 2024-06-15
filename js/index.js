@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded with JavaScript');
 });
 
-
 const validacionesLogin = () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
@@ -27,13 +26,18 @@ const login = async (body) => {
             body: JSON.stringify(body),
         });
         const _response = await response.json(); 
-        debugger;
         if(_response === 'Usuario no encontrado.'){
             alert('Usuario no encontrado.');
             return;
         }   
         sessionStorage.setItem('user', JSON.stringify(_response));
-        redireccionar(`${hosts3}/index.html`);
+        const { redirectUrl } = _response;
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+          });
+        redireccionar(`${hosts3}/html${redirectUrl}.html`);
     } catch (error) {
         return error;
     }
