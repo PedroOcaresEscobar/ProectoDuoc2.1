@@ -1,0 +1,98 @@
+
+body{
+    background-color: #f8f9fa !important;
+}
+
+
+
+.tamaño{
+    width: 50% !important;
+    height: auto;
+    border-radius: 0px;
+    display: grid;
+    margin: 5% 20% 0% 20%;
+    /*border: 1px solid black;*/
+}
+
+form{
+    padding: 25px !important;
+    width: 100% !important;
+}
+
+.btn-primary{
+    background-color: #F8BA21 !important ;
+    border: 0px !important;
+    border-radius: 0px !important;
+    color: black;
+}
+
+.btn-primary:hover{
+    color: black;   
+}
+
+.btn-secondary{
+    border-radius: 0px !important;
+    border: 0px !important;
+    background-color: #202c88 !important;
+}
+
+#btn-primary{
+    width: 100% !important;
+}
+
+.accordion-button{
+   background-color: #112d53 !important;
+   color: white !important;
+}
+
+.accordion-header{
+    background-color: #112d53 !important;
+    padding-right: 10px;
+ }
+
+ .accordion-body{
+    background-color: rgb(208, 230, 255) !important;
+ }
+
+#acordeones{
+    padding: 0px 150px;
+}
+
+.casilla{
+    border-radius: 0px !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    border: none !important; /* Elimina todos los bordes */
+    border-bottom: 1px solid black !important; /* Agrega solo el borde inferior */
+}
+
+.accordion-button::after{
+    filter: invert();
+    scale: 1.4 !important;
+}
+
+.logo-superior{
+    width: 164px;
+    padding-top: 20px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 600px){
+    .tamaño{
+        width:  90% !important;
+        margin: 40% auto 0 auto;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    .tamaño{
+        width: 70% !important;
+        margin: 30% auto 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .tamaño{
+        width: 25% !important;
+        margin: 15% auto 0 auto;
+    }
+}
