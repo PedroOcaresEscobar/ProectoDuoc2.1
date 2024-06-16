@@ -15,6 +15,7 @@ document.querySelectorAll('.toggle-bar').forEach(function(toggleBar) {
 
 /*Validacion CheckBox's*/
 document.addEventListener('DOMContentLoaded', (event) => {
+    
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
     checkboxes.forEach((checkbox) => {
@@ -41,80 +42,61 @@ const UUID = () => {
     }).join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
     return uuid;
 }
+const createdAt = () => {
+    const fecha = new Date().toISOString();
+    return fecha;
+};
 
-document.getElementById('guardar').addEventListener('click', () => {
-
-    const id = UUID();
-    const fechaCreacion = new Date().toISOString();
+const user = () => {
     const nombre = document.getElementById('inputNombre').value;
     const email = document.getElementById('inputEmail').value;
     const rut = document.getElementById('inputRut').value;
+    const telefono = document.getElementById('inputTelefono').value;
+    return {nombre, email, rut, telefono};
+};
 
-    const usuario = {
-        "nombre": nombre,
-        "email": email,
-        "rut": rut
-    };
+const select = (idSelect) => {
+    const selector = document.getElementById(idSelect);
+    const opcion = selector.options[selector.selectedIndex].text;
+    return opcion
+};
 
-    const selectEquipo = document.getElementById("tipoEquipo");
-    let equipo = selectEquipo.options[selectEquipo.selectedIndex].text;
+const checkbox = (claseCheckbox) => {
+    let checkboxes = document.querySelectorAll(`.${claseCheckbox}`);
+    let check = "";
+    checkboxes.forEach((elemento) => {
+        if(elemento.checked){
+            check = elemento.getAttribute('value');
+        }
+    });
+    return check;
+};
 
+const infoEquipo = () => {
     const marca = document.getElementById('inputMarca').value;
     const modelo = document.getElementById('inputModelo').value;
     const serie = document.getElementById('inputSerie').value;
-
-    const selectSistema = document.getElementById("inputSistema");
-    let so = selectSistema.options[selectSistema.selectedIndex].text;
-    
-
-    let garantiaCheck=document.querySelectorAll('.garantiaCheck');
-    let garantia = "";
-    garantiaCheck.forEach((elemento) => {
-        if(elemento.checked){
-            garantia = elemento.getAttribute('value');
-        }
-    });
-        
-    let cargadorCheck=document.querySelectorAll('.cargadorCheck');
-    let cargador = "";
-    cargadorCheck.forEach((elemento) => {
-        if(elemento.checked){
-            cargador = elemento.getAttribute('value');
-        }
-    });
-
-    let almacenamientoCheck=document.querySelectorAll('.almacenamientoCheck');
-    let almacenamiento = "";
-    almacenamientoCheck.forEach((elemento) => {
-        if(elemento.checked){
-            almacenamiento = elemento.getAttribute('value');
-        }
-    });
-
     const observacion = document.getElementById('inputObservaciones').value;
-    
     const ram = document.getElementById('inputRam').value;
     const procesador = document.getElementById('inputProcesador').value;
     const tiempoReparacion = document.getElementById('inputMinutes').value;
     const adicional = document.getElementById('inputObservaciones').value;
+    const selectEquipo = select("tipoEquipo");
+    const selectSistema = select("inputSistema");
+    const garantia = checkbox("garantiaCheck");
+    const cargador = checkbox("cargadorCheck");
+    const almacenamiento = checkbox("almacenamientoCheck");
+    
+    return {marca, modelo, serie, garantia, cargador, observacion, almacenamiento, ram, procesador, tiempoReparacion, adicional, selectEquipo, selectSistema};
+};
 
-    const datosEquipo = {
-        "equipo": equipo,
-        "marca": marca,
-        "modelo": modelo,
-        "serie": serie,
-        "so": so,
-        "garantia": garantia,
-        "cargador": cargador,
-        "observacion": observacion,
-        "almacenamiento": almacenamiento,
-        "ram": ram,
-        "procesador": procesador,
-        "tiempoReparacion": tiempoReparacion,
-        "adicional": adicional
+document.getElementById('guardar').addEventListener('click', () => {
 
-    };
-
+    const id = UUID();
+    const fechaCreacion = createdAt();
+    const usuario = user();
+    const datosEquipo = infoEquipo();
+    
     const usuarioRecepcionista = {
             "nombre": "Juan",
             "apellido": "Perez",
