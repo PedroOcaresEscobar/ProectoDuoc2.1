@@ -40,7 +40,7 @@
         <section class="contenedor-formulario col-8 m-auto">
             <div id="toggleContainer" class="toggle-bar">
                 <span>Datos del Dueño</span>
-                <span id="toggleIcon">+</span>
+                <span class="toggle-icon">+</span>
             </div>
             <div id="toggleContent" class="toggle-content">
                 <fieldset>
@@ -76,26 +76,28 @@
                     <form class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Tipo de Equipo</label>
-                            <select class="form-select">
+                            <select id="tipoEquipo" class="form-select">
+                                <option>-- Elegir Opción --</option>
                                 <option>Laptop</option>
                                 <option>PC</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Modelo</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="inputModelo">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Marca</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="inputMarca">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">N° de Serie</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="inputSerie">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">SO Instalado</label>
-                            <select class="form-select">
+                            <select class="form-select" id="inputSistema">
+                                <option>-- Elegir Opción --</option>
                                 <option>Windows</option>
                                 <option>MacOS</option>
                                 <option>Ubuntu</option>
@@ -105,24 +107,24 @@
                         <div class="col-md-6">
                             <label class="form-label">¿Tiene Garantía?</label>
                             <div>
-                                <input id="garantia-si" class="form-check-input" type="checkbox" name="garantia" value="si">
+                                <input id="garantia-si" class="garantiaCheck form-check-input" type="checkbox" name="garantia" value="si">
                                 <span>Sí</span>
-                                <input id="garantia-no" class="form-check-input" type="checkbox" name="garantia" value="no">
+                                <input id="garantia-no" class="garantiaCheck form-check-input" type="checkbox" name="garantia" value="no">
                                 <span>No</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">¿Tiene Cargador?</label>
                             <div>
-                                <input id="cargador-si" class="form-check-input" type="checkbox" name="cargador" value="si">
+                                <input id="cargador-si" class="cargadorCheck form-check-input" type="checkbox" name="cargador" value="si">
                                 <span>Sí</span>
-                                <input id="cargador-no" class="form-check-input" type="checkbox" name="cargador" value="no">
+                                <input id="cargador-no" class="cargadorCheck form-check-input" type="checkbox" name="cargador" value="no">
                                 <span>No</span>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <label for="exampleFormControlTextarea1" class="form-label">Observaciones</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="observaciones" rows="3"></textarea>
                         </div>
                     </form>
                 </fieldset>
@@ -132,31 +134,32 @@
         <section class="contenedor-formulario col-8 m-auto">
             <div id="toggleContainer" class="toggle-bar">
                 <span>Especificaciones del equipo</span>
-                <span id="toggleIcon">+</span>
+                <span class="toggle-icon">+</span>
             </div>
             <div id="toggleContent" class="toggle-content">
                 <fieldset>
                     <form class="row g-3">
                         <div class="col-md-6">
-                            <label for="inputNombre" class="form-label">Tipo de Almacenamiento</label>
+                            <label id="almacenamiento" for="inputNombre" class="form-label">Tipo de Almacenamiento</label>
                             <div>
-                                <input id="ssd" class="form-check-input" type="checkbox" name="Almacenamiento" value="ssd">
+                                <input id="ssd" class="almacenamientoCheck form-check-input" type="checkbox" name="Almacenamiento" value="ssd">
                                 <span>SSD</span>
-                                <input id="hdd" class="form-check-input" type="checkbox" name="Almacenamiento" value="hdd">
+                                <input id="hdd" class="almacenamientoCheck form-check-input" type="checkbox" name="Almacenamiento" value="hdd">
                                 <span>HDD</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="inputTelefono" class="form-label">Capacidad de Almacenamiento</label>
-                            <input type="text" class="form-control" id="capacidad">
+                            <input type="text" class="form-control" id="inputCapacidad">
                         </div>
                         <div class="col-md-6">
                             <label for="inputRut" class="form-label">Procesador</label>
-                            <input type="text" class="form-control" id="procesador">
+                            <input type="text" class="form-control" id="inputProcesador">
                         </div>
                         <div class="col-md-6">
+                            
                             <label for="inputEmail" class="form-label">RAM</label>
-                            <input type="T" class="form-control" id="ram">
+                            <input type="T" class="form-control" id="inputRam">
                         </div>
                         <div class="col-md-8 d-flex align-items-center mt-4 input-group">
                             <label for="inputMinutes" class="form-label me-2">Tiempo de reparación</label>
@@ -164,14 +167,14 @@
                             <span class="input-group-text">Minutos</span>
                         </div>  
                         <div class="col-md-12 mt-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Datos Adicionales       </label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="inputObservaciones" class="form-label">Datos Adicionales       </label>
+                            <textarea class="form-control" id="inputObservaciones" rows="3"></textarea>
                         </div>
                     </form>
                 </fieldset>
             </div>
             <div class="text-end mt-3 mb-5">
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button id="guardar" type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </section>
     </main>

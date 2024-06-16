@@ -1,3 +1,4 @@
+//Acordeon
 document.querySelectorAll('.toggle-bar').forEach(function(toggleBar) {
     toggleBar.addEventListener('click', function() {
         var content = this.nextElementSibling;
@@ -29,3 +30,109 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+
+const UUID = () => {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40; 
+    bytes[8] = (bytes[8] & 0x3f) | 0x80; 
+    const uuid = Array.from(bytes).map((b) => {
+        const hex = b.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    }).join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
+    return uuid;
+}
+
+document.getElementById('guardar').addEventListener('click', () => {
+
+    const id = UUID();
+    const fechaCreacion = new Date().toISOString();
+    const nombre = document.getElementById('inputNombre').value;
+    const email = document.getElementById('inputEmail').value;
+    const rut = document.getElementById('inputRut').value;
+
+    const usuario = {
+        "nombre": nombre,
+        "email": email,
+        "rut": rut
+    };
+
+    const selectEquipo = document.getElementById("tipoEquipo");
+    let equipo = selectEquipo.options[selectEquipo.selectedIndex].text;
+
+    const marca = document.getElementById('inputMarca').value;
+    const modelo = document.getElementById('inputModelo').value;
+    const serie = document.getElementById('inputSerie').value;
+
+    const selectSistema = document.getElementById("inputSistema");
+    let so = selectSistema.options[selectSistema.selectedIndex].text;
+    
+
+    let garantiaCheck=document.querySelectorAll('.garantiaCheck');
+    let garantia = "";
+    garantiaCheck.forEach((elemento) => {
+        if(elemento.checked){
+            garantia = elemento.getAttribute('value');
+        }
+    });
+        
+    let cargadorCheck=document.querySelectorAll('.cargadorCheck');
+    let cargador = "";
+    cargadorCheck.forEach((elemento) => {
+        if(elemento.checked){
+            cargador = elemento.getAttribute('value');
+        }
+    });
+
+    let almacenamientoCheck=document.querySelectorAll('.almacenamientoCheck');
+    let almacenamiento = "";
+    almacenamientoCheck.forEach((elemento) => {
+        if(elemento.checked){
+            almacenamiento = elemento.getAttribute('value');
+        }
+    });
+
+    const observacion = document.getElementById('inputObservaciones').value;
+    
+    const ram = document.getElementById('inputRam').value;
+    const procesador = document.getElementById('inputProcesador').value;
+    const tiempoReparacion = document.getElementById('inputMinutes').value;
+    const adicional = document.getElementById('inputObservaciones').value;
+
+    const datosEquipo = {
+        "equipo": equipo,
+        "marca": marca,
+        "modelo": modelo,
+        "serie": serie,
+        "so": so,
+        "garantia": garantia,
+        "cargador": cargador,
+        "observacion": observacion,
+        "almacenamiento": almacenamiento,
+        "ram": ram,
+        "procesador": procesador,
+        "tiempoReparacion": tiempoReparacion,
+        "adicional": adicional
+
+    };
+
+    const usuarioRecepcionista = {
+            "nombre": "Juan",
+            "apellido": "Perez",
+            "email": "juan.perez@test.com",
+            "role": "recepcionista"
+    };
+    
+    const datosFicha = {
+        "id": id,
+        "estado": "recepcionado",
+        "fechaCreacion": fechaCreacion,
+        "datosFicha":{
+            "datosEquipo": datosEquipo,
+            "usuario": usuario,
+            "usuarioRecepcionista": usuarioRecepcionista,
+        }
+    };
+    console.log(datosFicha);
+    return datosFicha;
+
+}); 
