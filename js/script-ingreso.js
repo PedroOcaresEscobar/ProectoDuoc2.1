@@ -1,4 +1,12 @@
 //Acordeon
+let hosts3 = 'https://clinicaduoc.s3.amazonaws.com';
+let hostgateway = 'https://i0ottrtiwa.execute-api.us-east-1.amazonaws.com';
+let estados = {
+    "recepcionado": "RECEPCIONADO",
+    "enproceso": "EN PROCESO",
+    "finalizado": "FINALIZADO"
+};
+
 document.querySelectorAll('.toggle-bar').forEach(function(toggleBar) {
     toggleBar.addEventListener('click', function() {
         var content = this.nextElementSibling;
@@ -41,24 +49,25 @@ const UUID = () => {
         return hex.length === 1 ? '0' + hex : hex;
     }).join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
     return uuid;
-}
+};
+
 const createdAt = () => {
     const fecha = new Date().toISOString();
     return fecha;
 };
 
 const user = () => {
-    const nombre = document.getElementById('inputNombre').value;
-    const email = document.getElementById('inputEmail').value;
-    const rut = document.getElementById('inputRut').value;
-    const telefono = document.getElementById('inputTelefono').value;
-    return {nombre, email, rut, telefono};
+    return {
+        nombre: document.getElementById('inputNombre').value,
+        email: document.getElementById('inputEmail').value,
+        rut: document.getElementById('inputRut').value,
+        telefono: document.getElementById('inputTelefono').value
+    };
 };
 
 const select = (idSelect) => {
     const selector = document.getElementById(idSelect);
-    const opcion = selector.options[selector.selectedIndex].text;
-    return opcion
+    return selector.options[selector.selectedIndex].text;
 };
 
 const checkbox = (claseCheckbox) => {
@@ -72,22 +81,31 @@ const checkbox = (claseCheckbox) => {
     return check;
 };
 
+const obtieneDatosDeSesion = () => {
+    const datos = sessionStorage.getItem('datos');
+    if (datos) {
+        return JSON.parse(datos);
+    }
+    return null;
+
+}
+
 const infoEquipo = () => {
-    const marca = document.getElementById('inputMarca').value;
-    const modelo = document.getElementById('inputModelo').value;
-    const serie = document.getElementById('inputSerie').value;
-    const observacion = document.getElementById('inputObservaciones').value;
-    const ram = document.getElementById('inputRam').value;
-    const procesador = document.getElementById('inputProcesador').value;
-    const tiempoReparacion = document.getElementById('inputMinutes').value;
-    const adicional = document.getElementById('inputObservaciones').value;
-    const selectEquipo = select("tipoEquipo");
-    const selectSistema = select("inputSistema");
-    const garantia = checkbox("garantiaCheck");
-    const cargador = checkbox("cargadorCheck");
-    const almacenamiento = checkbox("almacenamientoCheck");
-    
-    return {marca, modelo, serie, garantia, cargador, observacion, almacenamiento, ram, procesador, tiempoReparacion, adicional, selectEquipo, selectSistema};
+    return {
+        marca: document.getElementById('inputMarca').value,
+        modelo: document.getElementById('inputModelo').value,
+        serie: document.getElementById('inputSerie').value,
+        observacion: document.getElementById('inputObservaciones').value,
+        ram: document.getElementById('inputRam').value,
+        procesador: document.getElementById('inputProcesador').value,
+        tiempoReparacion: document.getElementById('inputMinutes').value,
+        adicional: document.getElementById('inputObservaciones').value,
+        selectEquipo: select("tipoEquipo"),
+        selectSistema: select("inputSistema"),
+        garantia: checkbox("garantiaCheck"),
+        cargador: checkbox("cargadorCheck"),
+        almacenamiento: checkbox("almacenamientoCheck")
+    }
 };
 
 document.getElementById('guardar').addEventListener('click', () => {
@@ -96,7 +114,47 @@ document.getElementById('guardar').addEventListener('click', () => {
     const fechaCreacion = createdAt();
     const usuario = user();
     const datosEquipo = infoEquipo();
+    const datosSesion = obtieneDatosDeSesion();
+
+    const idformulario = crypto.randomUUID();
+    /**
+     *     return {nombre, email, rut, telefono};
+     */
+    const _body ={
+        "id": idformulario,
+        "datosFicha": {
+         "datosEquipo": {
+          "almacenamiento": datosEquipo.almacenamiento,
+          "gpu": datosEquipo.gpu,
+          "procesador": datosEquipo.procesador,
+          "ram": datosEquipo.ram,
+          "sistemaOperativo": datosEquipo.selectSistema,
+          "tipoAlmacenamiento": datosEquipo.selectEquipo,
+          "cargador": datosEquipo.cargador,
+          "garantia": datosEquipo.garantia,
+         },
+         "usuario": {
+          "apellido": usuario.nombre,
+          "email": usuario.email,
+          "nombre": usuario.nombre,
+         },
+         "usuarioRecepcionista": {
+          "apellido": datosSesion.apellido,
+          "email": datosSesion.email,
+          "nombre": datosSesion.nombre,
+         },
+         "tecnicoEncargado":{
+           "nombre":null,
+           "apellido":null,
+           "email":null
+         }
+        },
+        
+        "estado": estados.recepcionado,
+        "fechaCreacion": createdAt()
+    }
     
+    //TODO obtener los datos desde la sesión
     const usuarioRecepcionista = {
             "nombre": "Juan",
             "apellido": "Perez",
@@ -118,33 +176,26 @@ document.getElementById('guardar').addEventListener('click', () => {
     enviarFormulario(datosFicha);
 }); 
 
-let hosts3 = 'https://clinicaduoc.s3.amazonaws.com';
-let hostgateway = 'https://i0ottrtiwa.execute-api.us-east-1.amazonaws.com';
-
 const enviarFormulario = async (body) => {
+    // datos que debe capturar el formulario
+
     try {
-        const response = await fetch(`${hostgateway}/computadorclinica`, {
+        await fetch(`${hostgateway}/computadorclinica`, {
             method: 'PUT',
-            body: JSON.stringify(body),
+            body: JSON.stringify(_body),
         });
-        const _response = await response.json(); 
-        // if(_response === 'Usuario no encontrado.'){
-        //     alert('Usuario no encontrado.');
-        //     return;
-        // }   
-        // sessionStorage.setItem('user', JSON.stringify(_response));
-        const { redirectUrl } = _response;
-        Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
-        redireccionar(`${hosts3}/html${redirectUrl}.html`);
+        redireccionar(`${hosts3}/html/ingreso.html`);
     } catch (error) {
+        debugger;
         return error;
     }
 };
 
 const redireccionar = (path) => {
     return window.location.href = path;
+};
+
+const logout = () => {
+    sessionStorage.removeItem('datos');
+    redireccionar(`${hosts3}/index.html`);
 };
