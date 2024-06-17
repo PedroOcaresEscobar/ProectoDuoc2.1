@@ -1,0 +1,19 @@
+{
+    "id": "1",
+    "estado": "recepcionado",
+    "fechaCreacion": "2021-06-01",
+    "datosFicha":{
+        "datosEquipo": {
+
+        },
+        "usuario":{
+
+        },
+        "usuarioRecepcionista":{
+            "nombre": "Juan",
+            "apellido": "Perez",
+            "email": "juan.perez@test.com",
+            "role": "recepcionista"
+        }
+    }
+}
