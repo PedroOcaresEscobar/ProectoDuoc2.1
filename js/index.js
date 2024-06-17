@@ -3,6 +3,15 @@ let hostgateway = 'https://i0ottrtiwa.execute-api.us-east-1.amazonaws.com';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded with JavaScript');
+    // obtener datos del usuario desde el sesionStorage
+    let user = JSON.parse(sessionStorage.getItem('user'));
+    const { redirectUrl } = user;
+
+    // revisar si tiene los requerimientos para acceder al path
+    if (user) {
+        alert('Usuario no autorizado.');
+        redireccionar(`${hosts3}/html${redirectUrl}.html`);
+    }
 });
 
 const validacionesLogin = () => {
