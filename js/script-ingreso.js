@@ -118,38 +118,6 @@ document.getElementById('guardar').addEventListener('click', () => {
     enviarFormulario(datosFicha);
 }); 
 
-/*
-let hosts3 = 'https://clinicaduoc.s3.amazonaws.com';
-let hostgateway = 'https://gq1ph4flik.execute-api.us-east-1.amazonaws.com';
-
-const enviarFormulario = async (body) => {
-    try {
-        const response = await fetch(`${hostgateway}/computadorclinica`, {
-            method: 'PUT',
-            body: JSON.stringify(body),
-        });
-        const _response = await response.json(); 
-        if(_response === 'Usuario no encontrado.'){
-            alert('Usuario no encontrado.');
-            return;
-        }   
-        sessionStorage.setItem('user', JSON.stringify(_response));
-        const { redirectUrl } = _response;
-        Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
-        redireccionar(`${hosts3}/html${redirectUrl}.html`);
-    } catch (error) {
-        return error;
-    }
-};
-
-const redireccionar = (path) => {
-    return window.location.href = path;
-};
-*/
 let hosts3 = 'https://clinicaduoc.s3.amazonaws.com';
 let hostgateway = 'https://i0ottrtiwa.execute-api.us-east-1.amazonaws.com';
 
