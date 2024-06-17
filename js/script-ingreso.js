@@ -106,7 +106,7 @@ document.getElementById('guardar').addEventListener('click', () => {
     
     const datosFicha = {
         "id": id,
-        "estado": "recepcionado",
+        "estado": "RECEPCIONADO",
         "fechaCreacion": fechaCreacion,
         "datosFicha":{
             "datosEquipo": datosEquipo,
